@@ -84,7 +84,7 @@ DATA<-read.table("DATA.txt",header=T,dec=",")
 fix(DATA)               
 class(DATA)
 
-#También se puede cargar un archivo de EXCEL en formato csv
+#TambiÃ©n se puede cargar un archivo de EXCEL en formato csv
 
 
 ###############################################
