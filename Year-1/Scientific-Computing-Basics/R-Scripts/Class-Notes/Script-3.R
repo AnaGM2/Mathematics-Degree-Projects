@@ -1,5 +1,5 @@
 #############################################
-# PROGRAMAS DE CÁLCULO CIENTÍFICO Y PROCESAMIENTO DE TEXTOS
+# PROGRAMAS DE CÃLCULO CIENTÃFICO Y PROCESAMIENTO DE TEXTOS
 #############################################
 
 #############################################
@@ -42,7 +42,7 @@ prog1(z)
 
 prog2<-function(v,X)
 {
-# Este programa pre-multiplica un vector v de tamaño n por una matriz X 
+# Este programa pre-multiplica un vector v de tamaÃ±o n por una matriz X 
 # de con n filas.
 	n<-length(v)
 	v<-matrix(v,1,n)
@@ -111,7 +111,7 @@ if (lado < 0)
  print("El lado debe ser un valor positivo.")
 else{
 if (valor==1){
- resultado<-paste("El área vale: ",lado*lado,"cm cuadrados")
+ resultado<-paste("El Ã¡rea vale: ",lado*lado,"cm cuadrados")
  resultado
 }
 else
@@ -129,8 +129,8 @@ areaoperimetro2(2,2)
 
 prog3<-function(v,X,pre=TRUE)
 {
-# Este programa pre-multiplica(pre=TRUE) o post-multiplica(pre=FALSE) un vector v de tamaño n por una matriz X 
-# de con n filas (o n columnas, si se trata de post-multiplicación)
+# Este programa pre-multiplica(pre=TRUE) o post-multiplica(pre=FALSE) un vector v de tamaÃ±o n por una matriz X 
+# de con n filas (o n columnas, si se trata de post-multiplicaciÃ³n)
 	n<-length(v)
 	if(pre) 
 		{
@@ -175,7 +175,7 @@ for( j in 1:n ){
 comp <- (2*j+4)/j
 v<-cbind(v,comp)
 }
-plot(v[1,],xlab="Coordenada",ylab="Sucesión")
+plot(v[1,],xlab="Coordenada",ylab="SucesiÃ³n")
 v
 }
 
