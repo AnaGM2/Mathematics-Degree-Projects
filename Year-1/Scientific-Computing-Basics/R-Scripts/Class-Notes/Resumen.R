@@ -1,12 +1,12 @@
 #VECTORES
 
-#Vector numérico
+#Vector numÃ©rico
 v<-c(1,2,3)
 
-#Vector carácter
+#Vector carÃ¡cter
 n<-c("hola","adios")
 
-#Vector con números del 1 al 10
+#Vector con nÃºmeros del 1 al 10
 w<-c(1:10)
 
 #Repite el 2; 10 veces
@@ -24,10 +24,10 @@ s<-seq(from=0,to=10,by=2)
 #Del 2 al 10 dividido en 6 partes iguales
 t<-seq(from=2,to=10,length=6)
 
-#Para saber el tamaño de un vector
+#Para saber el tamaÃ±o de un vector
 length(r)
 
-#Para saber el elemento de la posición 4 de w
+#Para saber el elemento de la posiciÃ³n 4 de w
 w[4]
 
 #Para saber los elementos de las posiciones 4, 5 y 6 de w
@@ -43,10 +43,10 @@ v==w
 #Matriz de 2 filas y 4 columnas
 A<-matrix(c(1,2,3,4,5,6,7,8),2,4)
 
-#Matrix de 2 filas y 4 columnas con los números ordenados
+#Matrix de 2 filas y 4 columnas con los nÃºmeros ordenados
 B<-matrix(c(1,2,3,4,5,6,7,8),2,4,byrow=TRUE)
 
-#Matriz de 2 filas y 3 columnas compuesta por el número 9
+#Matriz de 2 filas y 3 columnas compuesta por el nÃºmero 9
 C<-matrix(9,2,3)
 
 #Matriz de 5 filas y 2 columnas compuesta por las letras a y b
@@ -58,10 +58,10 @@ fix(A)
 #Para saber las dimensiones de una matriz
 dim(A)
 
-#Para saber el número de filas de una matriz
+#Para saber el nÃºmero de filas de una matriz
 nrow(A)
 
-#Para saber el número de columnas de una matriz
+#Para saber el nÃºmero de columnas de una matriz
 ncol(A)
 
 #Inversa de una matriz
@@ -71,7 +71,7 @@ solve(E)
 
 #DATA.FRAME
 
-#Data.frame formado por 2 números
+#Data.frame formado por 2 nÃºmeros
 F<-data.frame(1,2)
 
 #Data.frame formado por 2 vectores
@@ -93,10 +93,10 @@ fix(iris)
 #Para saber las dimensiones de un data.frame
 dim(iris)
 
-#Para saber el número de filas de un data.frame
+#Para saber el nÃºmero de filas de un data.frame
 nrow(iris)
 
-#Para saber el número de columnas de un data.frame
+#Para saber el nÃºmero de columnas de un data.frame
 ncol(iris)
 
 #Para saber el nombre de las columnas
@@ -106,7 +106,7 @@ colnames(iris)
 rownames(iris)
 
 #Para cambiar el nombre de las columnas
-colnames(X)<-c("HOLA","ADIÓS")
+colnames(X)<-c("HOLA","ADIÃ“S")
 
 #Muestra la primera columna en vertical
 iris[,1]
@@ -126,13 +126,13 @@ X$HOLA
 
 #LISTAS
 
-#Lista con números y letras
+#Lista con nÃºmeros y letras
 L<-list("Uno",2,"Tres",4)
 
 
 #FUNCIONES
 
-#Función con dos variables
+#FunciÃ³n con dos variables
 f<-function(x,y){x^y}
 
 #Dar valores y resolver
@@ -149,14 +149,14 @@ class(n)
 ls()
 
 
-#PROGRAMACIÓN
+#PROGRAMACIÃ“N
 diHola<-function(){
 "hola"
 }
 diHola()
 
 
-#FUNCIÓN A TROZOS
+#FUNCIÃ“N A TROZOS
 trozos<-function(x){
 ifelse((x<=-1),-x+2,
 ifelse((x>=0 & x<3),x^2-1,
