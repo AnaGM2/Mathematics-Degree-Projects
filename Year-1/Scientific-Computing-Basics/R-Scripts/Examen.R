@@ -3,11 +3,11 @@ a <- seq(from=0,to=4,length=7)
 b <- rep(c(0.5,0),3)
 A <- matrix(c(3,-2,1,2,3,-2,4,-1,1),3,3,byrow=TRUE)
 B <- matrix(c(2,-1,3,0,1,2,-2,2,3),3,3,byrow=TRUE)
-#La primera operación es la multiplicación elemento a elemento de ambas matrices
+#La primera operaciÃ³n es la multiplicaciÃ³n elemento a elemento de ambas matrices
 A*B
-#La segunda operación es la suma de las matrices
+#La segunda operaciÃ³n es la suma de las matrices
 A+B
-#La última operación es la multiplicación típica de matrices
+#La Ãºltima operaciÃ³n es la multiplicaciÃ³n tÃ­pica de matrices
 A%*%B
 
 
@@ -18,7 +18,7 @@ data(quakes)
 
 #Apartado a)
 
-#Definimos una función que calcule la media que se pide
+#Definimos una funciÃ³n que calcule la media que se pide
 profundidad.500 <- function(){
 x <- quakes[,3]
 v <- c()
@@ -30,13 +30,13 @@ for(i in y){
 mean(v)
 }
 
-#La siguiente instrucción calcula la media
+#La siguiente instrucciÃ³n calcula la media
 profundidad.500()
 
 #Apartado b)
 
-#Definimos una función que calcule la media pedida
-estación.33 <- function(){
+#Definimos una funciÃ³n que calcule la media pedida
+estaciÃ³n.33 <- function(){
 x <- quakes[,5]
 v <- c()
 y <- which(x==33)
@@ -47,29 +47,29 @@ for(i in y){
 mean(v)
 }
 
-#La media la obtenemos con la siguiente instrucción
-estación.33()
+#La media la obtenemos con la siguiente instrucciÃ³n
+estaciÃ³n.33()
 
 
 
 
 #EJERCICIO 3
 
-#Creamos la función que representará la figura
-gráfica <- function(){
+#Creamos la funciÃ³n que representarÃ¡ la figura
+grÃ¡fica <- function(){
 plot(sin,0,6,xlab="",ylab="",main="Seno y Coseno",col="green",lwd=3,lty=2)
 par(new=TRUE)
 plot(cos,0,6,xlab="",ylab="",col="blue")
 }
 
-#Obtenemos la figura con la siguiente instrucción
-gráfica()
+#Obtenemos la figura con la siguiente instrucciÃ³n
+grÃ¡fica()
 
 
 
 #EJERCICIO 4
 
-#Primera función
+#Primera funciÃ³n
 cuenta <- function(u,v){
 w <- c()
 x <- c()
@@ -92,7 +92,7 @@ cuenta(c(-1,0,2),c(2,-1))
 cuenta(c(2,3),c(1,-2))
 cuenta(c(-1,2,3,-2),c(1,2))
 
-#Segunda función
+#Segunda funciÃ³n
 cuenta2 <- function(u,v,k){
 w <- c()
 x <- c()
