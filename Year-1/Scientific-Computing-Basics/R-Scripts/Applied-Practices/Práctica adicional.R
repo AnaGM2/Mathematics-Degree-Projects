@@ -1,5 +1,5 @@
 ########################################
-#PRÁCTICA ADICIONAL
+#PRÃCTICA ADICIONAL
 ########################################
 
 
@@ -10,7 +10,7 @@ while(p>c){
  p<-p-(5*p)/100
  n<-n+1
 }
-cat('Habrá que esperar',n,'semanas y el precio final será de',p,'euros.\n')
+cat('HabrÃ¡ que esperar',n,'semanas y el precio final serÃ¡ de',p,'euros.\n')
 }
 f(200,140)
 
@@ -93,10 +93,10 @@ else{
 fib2(3)
 #APARTADO (c)
 fib3<-function(m){
-plot(fib2(m),main='Sucesión')
+plot(fib2(m),main='SucesiÃ³n')
 }
 fib3(20)
-#Su límite es 1.6
+#Su lÃ­mite es 1.6
 
 
 #EJERCICIO 4
@@ -131,11 +131,11 @@ if(x%%1==0){
   return(s)
  }
  else{
-  print('El número debe ser entero positivo')
+  print('El nÃºmero debe ser entero positivo')
  }
 }
 else{
- print('El número debe ser entero positivo')
+ print('El nÃºmero debe ser entero positivo')
 }
 }
 suma.cifras(234)
@@ -152,36 +152,36 @@ if(n%%1==0){
   }
  }
  else{
-  print('El número debe ser natural')
+  print('El nÃºmero debe ser natural')
  }
 }
 else{
- print('El número debe ser natural')
+ print('El nÃºmero debe ser natural')
 }
 }
 tablas.multiplicar(5)
 
 
 #EJERCICIO 8
-números.romanos<-function(n){
+nÃºmeros.romanos<-function(n){
 if(n%%1==0){
  if(n>0){
   if(n<3000){
    as.roman(n)
   }
   else{
-   print('El número debe ser natural entre 0 y 3000')
+   print('El nÃºmero debe ser natural entre 0 y 3000')
   } 
  }
  else{
-  print('El número debe ser natural entre 0 y 3000')
+  print('El nÃºmero debe ser natural entre 0 y 3000')
  }
 }
 else{
- print('El número debe ser natural entre 0 y 3000')
+ print('El nÃºmero debe ser natural entre 0 y 3000')
 }
 }
-números.romanos(29)
+nÃºmeros.romanos(29)
 
 
 #EJERCICIO 9
@@ -199,18 +199,18 @@ if(n%%1==0){
   return(v)
  }
  else{
-  print('El número debe ser natural')
+  print('El nÃºmero debe ser natural')
  }
 }
 else{
- print('El número debe ser natural')
+ print('El nÃºmero debe ser natural')
 }
 }
 divisores(12)
 
 
 #EJERCICIO 10
-números.primos<-function(n){
+nÃºmeros.primos<-function(n){
 q<-c(2)
 r<-3
 if(n%%1==0){
@@ -232,18 +232,18 @@ if(n%%1==0){
   print(q)
  }
  else{
-  print('El número debe ser natural')
+  print('El nÃºmero debe ser natural')
  }
 }
 else{
- print('El número debe ser natural')
+ print('El nÃºmero debe ser natural')
 }
 }
-números.primos(10)
+nÃºmeros.primos(10)
 
 
 
-números.primos2<-function(n){
+nÃºmeros.primos2<-function(n){
 q<-c(2)
 r<-3
 if(n%%1==0){
@@ -260,14 +260,14 @@ if(n%%1==0){
   print(q)
  }
  else{
-  print('El número debe ser natural')
+  print('El nÃºmero debe ser natural')
  }
 }
 else{
- print('El número debe ser natural')
+ print('El nÃºmero debe ser natural')
 }
 }
-números.primos2(10)
+nÃºmeros.primos2(10)
 
 
 #NO FUNCIONA NINGUNA DE LAS DOS WJEWBFIHWEFYBEWFHEWUOFHEWFBERWFHE4WHF4EWBFIHYE4WBHRUE4WHD
