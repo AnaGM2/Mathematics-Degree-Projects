@@ -21,7 +21,7 @@ This repository contains the set of works, labs, and projects developed during t
 ### 2. Applied Practices (`Practices/`)
 * **`Practica-1`**: Mastering R's Recycling Rule and matrix algebra.
 * **`Practica-2`**: Advanced plotting (line types, colors, and overlays with `par(new=TRUE)`).
-* **`Practica-3`**: Efficiency analysis—comparing Vectorization vs. Loops.
+* **`Practica-3`**: Efficiency analysis, comparing Vectorization vs. Loops.
 * **`Practica-Adicional`**: Algorithmic challenges including the Fibonacci Sequence and prime number exploration.
 
 ### 3. Deliverables & Exam (`Projects/`)
