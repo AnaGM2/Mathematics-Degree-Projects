@@ -1,5 +1,5 @@
 ########################################
-#PR¡CTICA 1
+#PR√ÅCTICA 1
 ########################################
 
 
@@ -12,13 +12,13 @@ e<-FALSE
 x<-c(1,2)
 y<-c(1,2,"yo",3)
 #APARTADO (i)
-class(a)		#NumÈrico
-class(b)		#NumÈrico
-class(c)		#Car·cter
-class(d)		#LÛgico
-class(e)		#LÛgico
-class(x)		#NumÈrico
-class(y)		#Car·cter
+class(a)		#Num√©rico
+class(b)		#Num√©rico
+class(c)		#Car√°cter
+class(d)		#L√≥gico
+class(e)		#L√≥gico
+class(x)		#Num√©rico
+class(y)		#Car√°cter
 #APARTADO (ii)
 a+b		#Suma, 4.141593
 b^a		#Potencia, 3.141593
@@ -26,8 +26,8 @@ a+d		#Suma 1 a a, 2
 a+e		#Suma 0 a a, 1
 x+b		#Suma componente a componente, (4.141593,5.141593)
 x+d		#Suma 1 a cada componente del vector, (2,3)
-y+a		#Error porque y no es numÈrico
-y+b		#Error porque y no es numÈrico
+y+a		#Error porque y no es num√©rico
+y+b		#Error porque y no es num√©rico
 a<a		#Falso porque a=a
 a<=a		#Verdadero porque a=a, y pide que sea menor o igual
 a<b		#Verdadero
@@ -39,17 +39,17 @@ x<-c(1,2,3,4,5,6)
 y<-c(7,8)
 z<-c(9,10,11,12)
 x+x		#Suma componente a componente, (2,4,6,8,10,12)
-x+y		#Como no tienen el mismo n˙mero de componentes, y se repite, (8,10,10,12,12,14)
-x+z		#Aparece una advertencia ya que la longitud de x no es m˙ltiplo de la de z, (10,12,14,16,14,16)
+x+y		#Como no tienen el mismo n√∫mero de componentes, y se repite, (8,10,10,12,12,14)
+x+z		#Aparece una advertencia ya que la longitud de x no es m√∫ltiplo de la de z, (10,12,14,16,14,16)
 2*x		#Multiplica componente a componente, (2,4,6,8,10,12)
 x^2		#Eleva componente a componente, (1,4,9,16,25,36)
 x^y		#La primera componente de x la eleva a 7, la segunda a 8, la tercera a 7, la cuarta a 8..., (1,256,2187,65536,78125,1679616)
 x*x		#Multiplica componente a componente, (1,4,9,16,25,36)
-x*y		#Multiplica componente a componente y, como no tienen el mismo n˙mero de componentes, y se repite, (7,16,21,32,35,48)
-x*z		#Aparece una advertencia ya que la longitud de x no es m˙ltiplo de la de z, (9,20,33,48,45,60)
+x*y		#Multiplica componente a componente y, como no tienen el mismo n√∫mero de componentes, y se repite, (7,16,21,32,35,48)
+x*z		#Aparece una advertencia ya que la longitud de x no es m√∫ltiplo de la de z, (9,20,33,48,45,60)
 exp(x)	#Calcula e elevado a cada componente de x, (2.718282,7.389056,20.085537,54.598150,148.413159,403.428793)
 length(x)	#Dice la longitud de x, que es 6
-sum(x)	#Suma las componentes entre sÌ, 21
+sum(x)	#Suma las componentes entre s√≠, 21
 cumsum(x)	#En la primera componente pone 1, en la segunda pone 1+2, en la tercera 1+2+3, en la cuarta 1+2+3+4..., (1,3,6,10,15,21)
 
 
@@ -68,7 +68,7 @@ i<-seq(from=0,to=2,length=7)
 #EJERCICIO 4
 u<-seq(from=1,to=7.5,by=0.5)
 length(u)				#Dice la longitud de u, que es 14
-u[c(1,14)]				#Muestra la primera y la ˙ltima componente, que son 1 y 7.5
+u[c(1,14)]				#Muestra la primera y la √∫ltima componente, que son 1 y 7.5
 u[1:3]				#Muestra las tres primeras componentes, que son 1, 1.5 y 2
 u[seq(from=4,to=2,by=-1)]	#Muestra las componentes 2.5, 2 y 1.5
 u[u>=3]				#Muestra las componentes mayores o iguales que 3, que son 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7 y 7.5
@@ -79,9 +79,9 @@ u[seq(from=1,to=13,by=3)]	#Muestra las componentes de la 1 a la 13 de 3 en 3
 #EJERCICIO 5
 v<-c(2,-1,3,5,-6,-8)
 #APARTADO (i)
-sort(v)		#Ordena los n˙meros de menor a mayor, (-8,-6,-1,2,3,5)
+sort(v)		#Ordena los n√∫meros de menor a mayor, (-8,-6,-1,2,3,5)
 order(v)		#Ordena las componentes de menor a mayor, (6,5,2,1,3,4)
-rank(v)		#Da un vector con el rango de los valores de v, de manera que el -8, al ser el menor, serÌa un 1, el -6 un 2, el -1 un 3..., (4,3,5,6,2,1)
+rank(v)		#Da un vector con el rango de los valores de v, de manera que el -8, al ser el menor, ser√≠a un 1, el -6 un 2, el -1 un 3..., (4,3,5,6,2,1)
 #APARTADO (ii)
 v1<-c(v[6],v[2:4])
 v2<-c(v[1],v[3:4])
@@ -89,7 +89,7 @@ v3<-c(v[seq(from=2,length=3,by=2)])
 
 
 #EJERCICIO 6
-chicos<-c("Jose","Luis","Alberto","Lucas")	#El objeto chicos es un vector de tipo car·cter
+chicos<-c("Jose","Luis","Alberto","Lucas")	#El objeto chicos es un vector de tipo car√°cter
 
 
 #EJERCICIO 7
@@ -132,7 +132,7 @@ A<-matrix(c(-6:-1),2,3)
 B<-matrix(c(10:21),3,4)
 C<-matrix(c(6:1),2,3)
 A*C			#Multiplica elemento a elemento
-outer(A,B)		#Multiplica la matriz A por cada uno de los elementos de B, form·ndose 12 matrices diferentes
+outer(A,B)		#Multiplica la matriz A por cada uno de los elementos de B, form√°ndose 12 matrices diferentes
 A+2			#Suma 2 a cada uno de los elementos de A
 A%*%B			#Por cada elemento Cij de la matriz producto multiplica cada elemento de la fila i de la matriz A por cada elemento de la columna j de la matriz B y suma
 exp(A)		#Calcula e elevado a cada elemento de A
@@ -157,7 +157,7 @@ A<-M[-3,-1]
 class(A)		#Es de tipo matriz
 #APARTADO (d)
 b<-M[-3,3]
-class(b)		#Es de tipo vector numÈrico
+class(b)		#Es de tipo vector num√©rico
 #APARTADO (e)
 t(A)
 #APARTADO (f)
@@ -202,7 +202,7 @@ datos1*datos2
 
 
 #EJERCICIO 14
-#Definimos la funciÛn que convierte de cm a m
+#Definimos la funci√≥n que convierte de cm a m
 f<-function(x){
 x/100
 }
@@ -211,13 +211,13 @@ f(250)
 
 
 #EJERCICIO 15
-#Definimos la funciÛn que convierte de cm a m si x es positiva
+#Definimos la funci√≥n que convierte de cm a m si x es positiva
 g<-function(x){
 if(x>0){
 y<-x/100
 y
 }else{
-print("La cantidad de centÌmetros debe ser positiva")
+print("La cantidad de cent√≠metros debe ser positiva")
 }
 }
 #Comprobamos con un valor positivo
@@ -228,13 +228,13 @@ g(-10)
 
 
 #EJERCICIO 16
-#Definimos la funciÛn
+#Definimos la funci√≥n
 h<-function(x){
 if(x>0){
 y=x/100
 paste("El argumento",x,"cm son",y,"metros")
 }else{
-print("La cantidad de centÌmetros debe ser positiva")
+print("La cantidad de cent√≠metros debe ser positiva")
 }
 }
 #Comprobamos
