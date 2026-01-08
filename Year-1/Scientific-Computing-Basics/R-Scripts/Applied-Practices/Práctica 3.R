@@ -1,5 +1,5 @@
 ########################################
-#PR罜TICA 3
+#PR脕CTICA 3
 ########################################
 
 
@@ -30,12 +30,12 @@ g(2,3)
 #EJERCICIO 4
 h<-function(a,b){
 potencia<-a^b
-divisi髇<-(a^b)/(a-b)
+divisi贸n<-(a^b)/(a-b)
 if(a!=b){
- cat(potencia,",",divisi髇,"\n")
+ cat(potencia,",",divisi贸n,"\n")
 }
 else{
- print("Los n鷐eros no pueden ser iguales.")
+ print("Los n煤meros no pueden ser iguales.")
 }
 }
 h(3,3)
@@ -44,17 +44,17 @@ h(1,3)
 
 #EJERCICIO 5
 i<-function(o,a,b){
-opci髇.1<-a+b
-opci髇.2<-a*b
-opci髇.3<-a^b
+opci贸n.1<-a+b
+opci贸n.2<-a*b
+opci贸n.3<-a^b
 if(o==1){
- cat(opci髇.1,"\n")
+ cat(opci贸n.1,"\n")
 }
 else if(o==2){
- cat(opci髇.2,"\n")
+ cat(opci贸n.2,"\n")
 }
 else if(o==3){
- cat(opci髇.3,"\n")
+ cat(opci贸n.3,"\n")
 }
 else{
  cat("Error","\n")
