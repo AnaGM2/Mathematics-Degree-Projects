@@ -16,7 +16,7 @@ This repository contains the set of works, labs, and projects developed during t
 * **`Script-1.R`**: Intro to R environments, vectors, matrices, and DataFrames.
 * **`Script-2.R`**: Visualization basics and graphics device management (`par`, `png`).
 * **`Script-3.R`**: Functional programming and logical branching.
-* **`Resumen.R`**: A comprehensive **Cheat Sheet** for quick syntax reference.
+* **`Resumen.R`**: A comprehensive Cheat Sheet for quick syntax reference.
 
 ### 2. Applied Practices (`Practices/`)
 * **Practice 1**: Mastering R's **Recycling Rule** and matrix algebra.
