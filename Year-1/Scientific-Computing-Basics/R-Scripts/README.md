@@ -24,8 +24,8 @@ This repository contains the set of works, labs, and projects developed during t
 * **`Practica-3`**: Efficiency analysis—comparing Vectorization vs. Loops.
 * **`Practica-Adicional`**: Algorithmic challenges including the Fibonacci Sequence and prime number exploration.
 
-### 3. Core Deliverables & Exam (`Projects/`)
-* **`Entregable.R` (Capstone)**: 
+### 3. Deliverables & Exam (`Projects/`)
+* **`Entregable.R` (Final Project)**: 
     * **Amicable & Perfect Numbers**: A mathematical engine to find number relationships.
     * **Geological Analysis**: A 4-panel dashboard analyzing the `rock` dataset.
     * **Triangle Solver**: A geometric tool using the Law of Cosines.
