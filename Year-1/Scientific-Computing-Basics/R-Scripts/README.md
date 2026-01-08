@@ -19,10 +19,10 @@ This repository contains the set of works, labs, and projects developed during t
 * **`Resumen.R`**: A comprehensive Cheat Sheet for quick syntax reference.
 
 ### 2. Applied Practices (`Practices/`)
-* **Practice 1**: Mastering R's **Recycling Rule** and matrix algebra.
+* **Practice 1**: Mastering R's Recycling Rule and matrix algebra.
 * **Practice 2**: Advanced plotting (line types, colors, and overlays with `par(new=TRUE)`).
-* **Practice 3**: Efficiency analysis—comparing **Vectorization** vs. Loops.
-* **Additional Practice**: Algorithmic challenges including the **Fibonacci Sequence** and prime number exploration.
+* **Practice 3**: Efficiency analysis—comparing Vectorization vs. Loops.
+* **Additional Practice**: Algorithmic challenges including the Fibonacci Sequence and prime number exploration.
 
 ### 3. Core Deliverables & Exam (`Projects/`)
 * **`Entregable.R` (Capstone)**: 
