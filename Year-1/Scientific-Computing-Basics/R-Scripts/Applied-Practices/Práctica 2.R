@@ -1,5 +1,5 @@
 ########################################
-#PR¡CTICA 2
+#PR√ÅCTICA 2
 ########################################
 
 
@@ -8,19 +8,19 @@ x<-1:10
 y<-x^2
 #APARTADO (a)
 plot(x)														
-#En el eje x aparecen n˙meros del 1 al 10 y en el eje y aparecen los valores del vector x
+#En el eje x aparecen n√∫meros del 1 al 10 y en el eje y aparecen los valores del vector x
 #APARTADO (b)
 plot(y,pch=2)													
-#En el eje x aparecen n˙meros del 1 al 10 y en el eje y aparecen los valores de y. El pch hace que los puntos tengan forma de tri·ngulo
+#En el eje x aparecen n√∫meros del 1 al 10 y en el eje y aparecen los valores de y. El pch hace que los puntos tengan forma de tri√°ngulo
 #APARTADO (c)
 plot(x,y,pch=3)													
-#En el eje x aparece x y en el eje y aparece y, y los puntos tienen la forma del m·s
+#En el eje x aparece x y en el eje y aparece y, y los puntos tienen la forma del m√°s
 #APARTADO (d)
 plot(x,y,type="l")												
-#En lugar de puntos aparece una lÌnea
+#En lugar de puntos aparece una l√≠nea
 #APARTADO (e)
 plot(x,y,type="o",col=3,lty=1)										
-#Aparecen los puntos y la lÌnea a la vez, y el color es verde
+#Aparecen los puntos y la l√≠nea a la vez, y el color es verde
 #APARTADO (f)
 plot(x,y,type="p",col=4,lty=2,lwd=1)									
 #Aparecen puntos azules
@@ -28,17 +28,17 @@ plot(x,y,type="p",col=4,lty=2,lwd=1)
 plot(x,y,type="s",col=5,lty=3,lwd=2,main="")								
 #Aparecen unas escaleras azules discontinuas de mayor grosor
 #APARTADO (h)
-plot(x,y,type="h",col=6,lty=4,lwd=3,main="Gr·fica",xlab="",ylab="")				
-#Aparecen lÌneas verticales rosas, discontinuas y de mayor grosor, adem·s de el nombre de la gr·fica
+plot(x,y,type="h",col=6,lty=4,lwd=3,main="Gr√°fica",xlab="",ylab="")				
+#Aparecen l√≠neas verticales rosas, discontinuas y de mayor grosor, adem√°s de el nombre de la gr√°fica
 #APARTADO (i)
-plot(x,y,type="l",col=7,lty=5,lwd=4,main="Gr·fica",xlab="SucesiÛn x",ylab="SucesiÛn y")	
+plot(x,y,type="l",col=7,lty=5,lwd=4,main="Gr√°fica",xlab="Sucesi√≥n x",ylab="Sucesi√≥n y")	
 #Los ejes tienen nombre
 #pch= sirve para cambiar la forma de los puntos
-#type= sirve para cambiar el tipo (puntos, lÌneas...)
+#type= sirve para cambiar el tipo (puntos, l√≠neas...)
 #col= sirve para cambiar el color
-#lty= sirve para cambiar el tipo de lÌnea
-#lwd= sirve para cambiar el grosor de la lÌnea
-#main= sirve para poner un nombre a la gr·fica
+#lty= sirve para cambiar el tipo de l√≠nea
+#lwd= sirve para cambiar el grosor de la l√≠nea
+#main= sirve para poner un nombre a la gr√°fica
 #xlab= sirve para cambiar el nombre del eje x
 #ylab= sirve para cambiar el nombre del eje y
 
@@ -47,29 +47,29 @@ plot(x,y,type="l",col=7,lty=5,lwd=4,main="Gr·fica",xlab="SucesiÛn x",ylab="Suces
 x<--4:4
 y<-exp(x)
 par(mfrow=c(1,2))
-plot(x,y,type="b",lty=2,col=3,lwd=3,main="Gr·fica de e^x",ylab="e^x")
-plot(x,y,type="h",col="red",lwd=3,main="Gr·fica de e^x",ylab="e^x")
+plot(x,y,type="b",lty=2,col=3,lwd=3,main="Gr√°fica de e^x",ylab="e^x")
+plot(x,y,type="h",col="red",lwd=3,main="Gr√°fica de e^x",ylab="e^x")
 
 
 #EJERCICIO 3
 f<-function(x) log(x)/x
 #APARTADO (a)
 plot(f)																
-#Se crea la gr·fica de f
+#Se crea la gr√°fica de f
 #APARTADO (b)
 plot(f,type="b")															
-#La gr·fica est· formada por lÌneas y puntos
+#La gr√°fica est√° formada por l√≠neas y puntos
 #APARTADO (c)
 plot(f,type="o",col=2,lty=2)													
-#La gr·fica es roja y las lÌneas son discontinuas
+#La gr√°fica es roja y las l√≠neas son discontinuas
 #APARTADO (d)
 plot(f,type="p",col=4,lty=3,lwd=4)												
 #R utiliza el dominio entre 0 y 1
 #APARTADO (e)
-plot(f,type="l",col=8,lty=6,lwd=5,main="Gr·fica",xlab="x",ylab="f(x)",xlim=c(0,5))				
+plot(f,type="l",col=8,lty=6,lwd=5,main="Gr√°fica",xlab="x",ylab="f(x)",xlim=c(0,5))				
 #Ahora el dominio es entre 0 y 5
 #APARTADO (f)
-plot(f,type="l",col=9,lty=7,lwd=6,main="Gr·fica",xlab="x",ylab="f(x)",xlim=c(0,5),ylim=c(-20,20))	
+plot(f,type="l",col=9,lty=7,lwd=6,main="Gr√°fica",xlab="x",ylab="f(x)",xlim=c(0,5),ylim=c(-20,20))	
 #Toma los valores de y entre -20 y 20
 
 
@@ -77,8 +77,8 @@ plot(f,type="l",col=9,lty=7,lwd=6,main="Gr·fica",xlab="x",ylab="f(x)",xlim=c(0,5
 f<-function(x){sin(x)+cos(x)}
 plot(f,0,6,lwd=4,col="cyan",main="sin(x)+cos(x)",ylab="y")
 plot(f,-6,6,lwd=2,col="blue",lty=2,ylim=c(-2,2),main="sin(x)+cos(x)",ylab="y")
-abline(h=0)		#Crea una lÌnea horizontal en y=0
-abline(v=1)		#Crea una lÌnea vertical en x=1
+abline(h=0)		#Crea una l√≠nea horizontal en y=0
+abline(v=1)		#Crea una l√≠nea vertical en x=1
 
 
 #EJERCICIO 5
@@ -87,13 +87,13 @@ plot(cos)
 plot(cos(x))
 plot(x,cos(x))
 #APARTADO (a)
-#La primera gr·fica representa el coseno entre el 0 y el 1 con una lÌnea
-#La segunda gr·fica representa el coseno de x con 100 puntos con una separaciÛn de 1 entre cada punto
-#La tercera gr·fica representa el coseno de x entre 0 y 2*pi con 100 puntos
+#La primera gr√°fica representa el coseno entre el 0 y el 1 con una l√≠nea
+#La segunda gr√°fica representa el coseno de x con 100 puntos con una separaci√≥n de 1 entre cada punto
+#La tercera gr√°fica representa el coseno de x entre 0 y 2*pi con 100 puntos
 #APARTADO (b)
 plot(cos,0,2*pi)
 #APARTADO (c)
-#La m·s adecuada es la tercera, ya que es la ˙nica que representa la funciÛn coseno en el intervalo dado
+#La m√°s adecuada es la tercera, ya que es la √∫nica que representa la funci√≥n coseno en el intervalo dado
 
 
 #EJERCICIO 6
@@ -106,23 +106,23 @@ plot(1/x)
 #EJERCICIO 7
 x<-seq(from=0,to=1,length=50)		#Crea un vector con 50 elementos que van del 0 al 1 en intervalos iguales
 y<-x^2					#Eleva el anterior vector al cuadrado
-par(mfrow=c(1,2))				#Hace que las dos gr·ficas siguientes se sit˙en una al lado de la otra
-plot(x,y,type="l",col=2,lty=4,lwd=3,main="Gr·fica")
-plot(x,y,type="l",col=3,lty=7,lwd=6,main="Gr·fica")
+par(mfrow=c(1,2))				#Hace que las dos gr√°ficas siguientes se sit√∫en una al lado de la otra
+plot(x,y,type="l",col=2,lty=4,lwd=3,main="Gr√°fica")
+plot(x,y,type="l",col=3,lty=7,lwd=6,main="Gr√°fica")
 x<-seq(from=pi,to=2*pi,length=50)
 f<-x*sin(x)
 g<-sin(x)/x
 par(mfrow=c(1,2))
-plot(x,f,type="l",col=2,lty=4,lwd=3,main="Gr·fica")
-plot(x,g,type="l",col=3,lty=7,lwd=6,main="Gr·fica")
+plot(x,f,type="l",col=2,lty=4,lwd=3,main="Gr√°fica")
+plot(x,g,type="l",col=3,lty=7,lwd=6,main="Gr√°fica")
 
 
 #EJERCICIO 8
 x<-seq(from=0,to=1,length=50)
 y<-x^2
 z<-x^3
-plot(x,y,type="l",col=2,lty=4,lwd=3,main="Gr·fica")
-lines(x,z,type="l",col=3,lty=7,lwd=6,main="Gr·fica")		#Hace que ambas gr·ficas aparezcan juntas una encima de la otra con los elementos de la primera
+plot(x,y,type="l",col=2,lty=4,lwd=3,main="Gr√°fica")
+lines(x,z,type="l",col=3,lty=7,lwd=6,main="Gr√°fica")		#Hace que ambas gr√°ficas aparezcan juntas una encima de la otra con los elementos de la primera
 x<-seq(from=pi,to=2*pi,length=50)
 f<-x*sin(x)
 g<-sin(x)/x
@@ -134,15 +134,15 @@ lines(x,g,type="l",col=3,lty=7,lwd=6,main="sin(x)/x")
 x<-seq(from=0,to=1,length=50)
 y<-x^2
 z<-x^3
-plot(x,y,type="l",col=2,lty=4,lwd=3,main="Gr·fica")
-par(new=TRUE)								#Hace que las gr·ficas se superpongan una encima de la otra y sus elementos se mezclen 
-plot(x,y,type="l",col=3,lty=7,lwd=6,main="Gr·fica")
+plot(x,y,type="l",col=2,lty=4,lwd=3,main="Gr√°fica")
+par(new=TRUE)								#Hace que las gr√°ficas se superpongan una encima de la otra y sus elementos se mezclen 
+plot(x,y,type="l",col=3,lty=7,lwd=6,main="Gr√°fica")
 x<-seq(from=pi,to=2*pi,length=50)
 f<-x*sin(x)
 g<-sin(x)/x
-plot(x,f,type="l",col=2,lty=4,lwd=3,main="Gr·fica",ylab="y")
+plot(x,f,type="l",col=2,lty=4,lwd=3,main="Gr√°fica",ylab="y")
 par(new=TRUE)
-plot(x,g,type="l",col=3,lty=7,lwd=6,main="Gr·fica",ylab="y")
+plot(x,g,type="l",col=3,lty=7,lwd=6,main="Gr√°fica",ylab="y")
 
 
 #EJERCICIO 10
@@ -178,7 +178,7 @@ abline(v=1)
 f<-function(x){2*exp(-2*x)}
 plot(f,0,10)
 abline(h=1)
-title("FunciÛn de densidad de una distribuciÛn exponencial")
+title("Funci√≥n de densidad de una distribuci√≥n exponencial")
 
 
 #EJERCICIO 14
@@ -261,8 +261,8 @@ cat('El cuadrado de',x,'es:',x^2,'\n')
 x=x+1
 }
 #APARTADO (a)
-#La primera muestra el cuadrado de los n˙meros del 1 al 5
-#la segunda muestra el cuadrado de los n˙meros del 1 al 10
+#La primera muestra el cuadrado de los n√∫meros del 1 al 5
+#la segunda muestra el cuadrado de los n√∫meros del 1 al 10
 #APARTADO (b)
 x<-c(2,7,1,19,4,0)
 for (i in x){
