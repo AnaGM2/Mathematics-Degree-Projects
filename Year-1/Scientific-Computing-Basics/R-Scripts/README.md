@@ -1,6 +1,6 @@
 # Scientific Computing & Data Analysis with R
 
-This repository contains the complete set of works, labs, and projects developed during the **"Scientific Computing and Text Processing"** course. The contents track my progress from basic R syntax to advanced functional programming and geological data analysis.
+This repository contains the set of works, labs, and projects developed during the **"Scientific Computing and Text Processing"** course, tracking my progress from basic R syntax to advanced functional programming and geological data analysis.
 
 ## Key Skills
 * **Programming:** Custom functions, nested loops (`for`, `while`), and recursive logic.
