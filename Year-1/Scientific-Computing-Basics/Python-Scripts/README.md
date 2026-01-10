@@ -1,6 +1,6 @@
-# Scientific Computing & Mathematics with Python (NumPy & Matplotlib)
+# Scientific Computing & Mathematics with Python
 
-This repository contains a comprehensive collection of scripts, laboratory exercises, and advanced projects developed using Python for scientific computing. The focus ranges from fundamental syntax to the implementation of complex mathematical algorithms and data visualization.
+This repository contains a collection of scripts, laboratory exercises, and projects developed using Python during the **"Scientific Computing and Text Processing"** course. The focus ranges from fundamental syntax to the implementation of complex mathematical algorithms and data visualization.
 
 ## Key Skills
 * **Numerical Computing:** Advanced use of `NumPy` for multi-dimensional arrays and vectorized operations.
@@ -13,7 +13,7 @@ This repository contains a comprehensive collection of scripts, laboratory exerc
 
 ## Repository Structure
 
-### 1. Course Foundations (`Theory-Notes/`)
+### 1. Course Foundations (`Class-Notes/`)
 * **`Script_1-4.py`**: A journey through Python basics, logic branching, loops, and convergent sequences.
 * **`polinomios.py`**: Comparative study of polynomial library conventions (Increasing vs. Decreasing powers).
 * **`Resumen.py` (The Master Cheat Sheet)**: A comprehensive reference for SciPy integration, linear algebra, and advanced plotting aesthetics.
