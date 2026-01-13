@@ -1,7 +1,7 @@
-% PÈndulo.
+% P√©ndulo.
 clc, clear all, close all
 
-% FunciÛn c·lculo derivadas.
+% Funci√≥n c√°lculo derivadas.
 function upunto = campo_B3D(u,t)
   % Variables globales.
   global m q Bx By Bz;
