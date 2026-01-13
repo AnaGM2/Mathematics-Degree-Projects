@@ -12,4 +12,4 @@ It consists of the following content:
 
 * Exercises: A folder containing the exercises solved during the practical sessions.
 
-* "Physics I Report.pdf": The final report featuring the obtained results.
+* "Informe Física I.pdf": The final report featuring the obtained results.
