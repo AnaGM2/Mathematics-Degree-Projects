@@ -8,8 +8,8 @@ This module covers the numerical resolution of complex physical problems using O
 
 It consists of the following content:
 
-* Scripts: A folder containing the scripts with the examples covered in class.
+* `Scripts/`: A folder containing the scripts with the examples covered in class.
 
-* Exercises: A folder containing the exercises solved during the practical sessions.
+* `Exercises/`: A folder containing the exercises solved during the practical sessions.
 
-* "Informe Física I.pdf": The final report featuring the obtained results.
+* `Informe Física I.pdf`: The final report featuring the obtained results.
