@@ -13,12 +13,12 @@ Additionally, a final project is included, featuring a technical report that exp
 
 ## Chapters and topics covered
 
-Chapter 1: Introduction to Python Programming
-Chapter 2: Variables, Functions, Conditionals, and Iterators
-Chapter 3: Strings
-Chapter 4: Lists
-Chapter 5: Matrices
-Chapter 6: Tuples, Dictionaries, and Classes
-Chapter 7: Arguments and Files
-Chapter 8: Recursion
-Chapter 9: Programming Strategies
+* Chapter 1: Introduction to Python Programming
+* Chapter 2: Variables, Functions, Conditionals, and Iterators
+* Chapter 3: Strings
+* Chapter 4: Lists
+* Chapter 5: Matrices
+* Chapter 6: Tuples, Dictionaries, and Classes
+* Chapter 7: Arguments and Files
+* Chapter 8: Recursion
+* Chapter 9: Programming Strategies
