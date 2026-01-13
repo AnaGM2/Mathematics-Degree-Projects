@@ -1,0 +1,14 @@
+NOMBRE;APELLIDOS;EDAD
+Daenerys;Targaryen;35
+Jon;Nieve;32
+Gregor;Clegane;55
+Cersei;Lannister;40
+Tyrion;Lannister;32
+Sansa;Stark;18
+Arya;Stark;16
+Khal;Drogo;29
+Joffrey;Baratheon;16
+Petyr;Baelish;53
+Sandor;Clegane;44
+Ramsay;Bolton;33
+Margaery;Tyrell;17
