@@ -2,6 +2,14 @@
 
 This module covers the numerical resolution of complex physical problems using Octave.
 
-* Applied Concepts: Numerical integration of differential equations of motion, analysis of dynamical systems, and visualization of 2D and 3D trajectories.
+* Applied Concepts: Analysis of dynamical systems and visualization of 2D and 3D trajectories.
 
 * Key Problems: Simulation of magnetic fields and damped oscillators.
+
+It consists of the following content:
+
+* Scripts: A folder containing the scripts with the examples covered in class.
+
+* Exercises: A folder containing the exercises solved during the practical sessions.
+
+* "Physics I Report.pdf": The final report featuring the obtained results.
