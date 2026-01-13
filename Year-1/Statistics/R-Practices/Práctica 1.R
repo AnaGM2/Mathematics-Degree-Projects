@@ -13,7 +13,7 @@ X = c(785,921,812,638,844,926,977,1095,1080,1045,1145,952,935,848,725,796,995,89
 T = table(X)
 
 
-# TAMA—O DE LA MUESTRA
+# TAMA√ëO DE LA MUESTRA
 
 n = length(X)
 n = sum(T)
@@ -45,7 +45,7 @@ range(X)
 hist(X)
 
 
-# SUMARIO (MÌnimo, Cuartil inferior, Media, Cuartil superior, M·ximo)
+# SUMARIO (M√≠nimo, Cuartil inferior, Media, Cuartil superior, M√°ximo)
 
 summary(X)
 
@@ -65,13 +65,13 @@ median(X)
 var(X)
 
 
-# DESVIACI”N TÕPICA
+# DESVIACI√ìN T√çPICA
 
 sd(X)
 sqrt(var(X))
 
 
-# RECORRIDO INTERCUARTÕLICO
+# RECORRIDO INTERCUART√çLICO
 
 IQR(X)
 
@@ -83,11 +83,12 @@ quantile(X,probs=75/100)	#Cuartil superior
 quantile(X,probs=90/100)	#Percentil de orden 90
 
 
-# COEFICIENTE DE SIMETRÕA
+# COEFICIENTE DE SIMETR√çA
 
 B1 = (sum(X-mean(X))^3)/((n-1)*(sd(X))^3)
 
 
 # COEFICIENTE DE CURTOSIS
+
 
 B2 = (sum(X-mean(X))^4)/((n-1)*(sd(X))^4)
