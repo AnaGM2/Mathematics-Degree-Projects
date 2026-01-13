@@ -72,23 +72,23 @@ cov(I,T)
 
 mean(I);var(I);mean(T);var(T);mean(R);var(R);mean(A);var(A);cov(I,T);cov(I,R);cov(I,A)
 
-# El que mayor covarianza tenga será el que esté más relacionado (gastos de alimentación)
+# El que mayor covarianza tenga serÃ¡ el que estÃ© mÃ¡s relacionado (gastos de alimentaciÃ³n)
 
-# REPRESENTACIÓN PUNTOS
+# REPRESENTACIÃ“N PUNTOS
 
 plot(I,T)
 plot(I,R)
 plot(I,A)
 
-# COEFICIENTE DE CORRELACIÓN LINEAL
+# COEFICIENTE DE CORRELACIÃ“N LINEAL
 
 cor(I,T);cor(I,R);cor(I,A)
 
-# COEFICIENTE DE DETERMINACIÓN
+# COEFICIENTE DE DETERMINACIÃ“N
 
 cor(I,T)^2;cor(I,R)^2;cor(I,A)^2
 
-#RECTA DE REGRESIÓN LINEAL
+#RECTA DE REGRESIÃ“N LINEAL
 
 lm(I~A)
 
@@ -98,7 +98,7 @@ lm(A~I)
 
 A=0.1451I+52.1353
 
-# REPRESENTACIÓN RECTA
+# REPRESENTACIÃ“N RECTA
 
 plot(I~A);abline(lm(I~A))
 plot(I~R);abline(lm(I~R))
