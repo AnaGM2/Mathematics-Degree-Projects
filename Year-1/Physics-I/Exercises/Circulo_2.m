@@ -1,7 +1,7 @@
-% PÈndulo.
+% P√©ndulo.
 clc, clear all, close all
 
-% FunciÛn c·lculo derivadas.
+% Funci√≥n c√°lculo derivadas.
 function upunto = lissajous(u,t)
   % Variables globales.
   global m k1 k2;
