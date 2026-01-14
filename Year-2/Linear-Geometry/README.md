@@ -9,10 +9,6 @@ A study of locus-based constructions and the reflective properties (rays) of con
 * **Optical Properties:** Implementation of reflection principles.
 * **Analytical Geometry:** Reduction to the canonical form of a conic.
 
-<div align="center">
-  <img src="Practice-1-Conics/Screenshots/elipse.png" width="300" alt="Ellipse Visualization">
-</div>
-
 ## Practice II: Quadric Surfaces
 3D modeling of complex surfaces and their traces on coordinate planes.
 
