@@ -126,4 +126,5 @@ def dif_divididas(x,y):
 # Datos ejercicio 2.7
 x_5=np.array([0,1,2,4])
 y_5=np.array([1,5,10,24])
+
 dif_divididas(x_5,y_5)
