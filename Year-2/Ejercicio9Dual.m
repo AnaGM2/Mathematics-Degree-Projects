@@ -1,0 +1,10 @@
+c=[-1,0,0,0]';
+A=[-1,1,1,0;1,-0.5,0,1];
+b=[-1,-1];
+lb=[-inf,-inf,0,0];
+ub=[];
+ctype="SS";
+vartype="CCCC";
+sense=1;
+param.presol=0;
+[xopt,vopt,error,extra] = glpk(c,A,b,lb,ub,ctype,vartype,sense,param)
