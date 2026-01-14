@@ -1,5 +1,6 @@
 # Numerical Analysis
 
+This module focuses on the implementation in Python of numerical algorithms to solve mathematical problems that are analytically complex or impossible to solve. These methods form the backbone of scientific computing, focusing on how to translate continuous mathematical concepts into discrete, machine-executable algorithms.
 
 ---
 
