@@ -105,3 +105,4 @@ print("Radio espectral:",J3b[2])
 print("Gauss-Seidel:",G3b[0])
 print("Número de iteraciones:",G3b[1])
 print("Radio espectral:",G3b[2])
+
