@@ -45,3 +45,4 @@ param.presol=0;
 % v(P) = 2*24 + (6/5)*288 = 393.6 euros
 
 % Conviene vender el aceite virgen extra a granel.
+
