@@ -7,4 +7,5 @@ ctype="SLUUUL";
 vartype="IIIIII";
 sense=1;
 param.presol=0;
+
 [xopt,vopt,error,extra] = glpk(c,A,b,lb,ub,ctype,vartype,sense,param)
