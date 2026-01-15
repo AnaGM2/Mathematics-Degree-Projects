@@ -1,6 +1,6 @@
 % x1 = kg de azufre = 800
-% x2 = kg de clorato pot·sico = 550
-% x3 = kg de carbÛn vegetal = 150
+% x2 = kg de clorato pot√°sico = 550
+% x3 = kg de carb√≥n vegetal = 150
 
 % Max 45(x1+x2+x3)-40x1-50x2-25x3
 % s.a. x1 <= 800
