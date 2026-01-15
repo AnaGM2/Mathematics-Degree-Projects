@@ -1,0 +1,10 @@
+c=[8,13,25,15,12,27,16,14]';
+A=[-1,-1,-1,0,0,0,0,0;0,0,0,-1,-1,-1,0,0;1,0,0,1,0,0,-1,0;0,1,0,0,1,0,0,-1;0,0,1,0,0,1,1,1];
+b=[-150,-200,0,0,260];
+lb=[];
+ub=[];
+ctype="LLSSS";
+vartype="IIIIIIII";
+sense=1;
+param.presol=0;
+[xopt,vopt,error,extra] = glpk(c,A,b,lb,ub,ctype,vartype,sense,param)
