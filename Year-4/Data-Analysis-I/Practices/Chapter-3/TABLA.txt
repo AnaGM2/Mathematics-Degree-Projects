@@ -1,0 +1,6 @@
+"No.fumadores" "Poco.fumadores" "Fumadores.Medios" "Muy.Fumadores"
+"Socios" 2 2 3 4
+"Gerentes" 4 3 7 4
+"Jefes de equipo" 25 10 12 4
+"Ayudantes" 18 24 33 13
+"Secretarias" 10 8 5 2
