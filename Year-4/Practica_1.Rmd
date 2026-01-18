@@ -1,0 +1,112 @@
+---
+title: 'Práctica 1: Procesos de Poisson'
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(sfsmisc)
+```
+
+* Simulación de procesos de Poisson
+
+* Apartado (b) ejercicio 27 
+
+
+\
+\
+
+### Simulación de procesos de Poisson
+
+Función para generar una trayectoria de un proceso de Poisson de parámetro $\lambda$
+
+```{r}
+my.Poisson=function(n,lambda) 
+{
+ T.vec=rexp(n, lambda)
+ Wj.realiz=cumsum(T.vec)               
+ return(Wj.realiz)
+ }
+```
+\
+
+####  Ejemplo
+```{r}
+Wj.real1=my.Poisson(10,1.2)
+```
+\
+```{r, fig.width=10,fig.cap="Fig. 1  Realización de longitud 10 de de un proceso de Poisson"}
+plotStep(c(0,Wj.real1),seq(1,10),verticals=TRUE,left.points=FALSE,xlab="t",ylab="X(t)",main=expression(" Realización de longitud 10 de de un proceso de Poisson de parámetro "*lambda*"=1.2"))
+```
+\
+\
+\
+
+###  Apartado (b) ejercicio 27 
+
+Función para generar n>1 realizaciones i.i.d. de una v.a. discreta con 
+ soporte S y función de probabilidad de masa P
+
+```{r}
+my.discrete=function(n,S,P) 
+{
+ c=length(S)                   # cardinal del soporte
+ u.vec=runif(n, min=0, max=1)
+ P.vec=cumsum(P)               # función de distribución 
+ sim.vec=rep(S[c],n)
+ for ( i in 1:(c-1))
+ {
+ sim.vec[u.vec<P.vec[c-i]]=S[c-i]	
+ }
+ return(sim.vec)
+ }
+```
+\
+
+Función para generar n=1 realizaciones i.i.d. de una v.a. discreta con 
+ soporte S y función de probabilidad de masa P
+
+```{r}
+my.discrete2=function(S,P) 
+{
+ c=length(S)                   # cardinalidad del soporte
+ u.vec=runif(1, min=0, max=1)
+ P.vec=cumsum(P)               # función de distribución 
+ i=min(seq(1,c)[u.vec<P.vec])
+ return(S[i])
+ }
+```
+\
+
+Código R: Ejercicio 27 de Procesos de Poisson
+
+```{r}
+N.sim=100000                     # número de valores simulados
+ lambda1=3
+ t=10
+ x.10=rpois( N.sim, lambda1* t)   # simulación de N.sim realizaciones de X(10)
+ Z.10=numeric( N.sim)
+for (  i in 1: N.sim)
+{
+ l= x.10[ i] # i-esimo valor simulado de X(10)
+ Yk.vec=my.discrete(l,c(5000,10000,20000),c(0.4,0.4,0.2)) 
+ Z.10[ i]=sum( Yk.vec) # simulación de Z(10) dado X(10)=l
+}
+```
+\
+
+```{r, fig.width=10,fig.cap="Fig. 2   Histograma de Z(10)"}
+hist( Z.10, probability=T, xlab="Z(10)", xlim=c(1*10^4,1*10^6), main="Histograma de Z(10)")
+points(rep(quantile( Z.10,0.90),2),c(-1,1000), type="l", col="red")
+
+q=300000+ sqrt(3.9*10^9/(1-0.9))                         #cota de Tchebychev ( c=497484.2)
+points(rep( q,2),c(-1,1000), type="l", col="blue")
+legend(6*10^5,5*10^(-6), c("Percentil 90 de Z(10)",
+"Cota de Tchebychev"), col=c("red","blue"), lty=c(1,1))
+```
+
