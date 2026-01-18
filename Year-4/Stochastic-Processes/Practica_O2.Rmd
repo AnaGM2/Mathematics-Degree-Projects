@@ -1,0 +1,211 @@
+---
+title: 'Práctica 2: Cadenas de Markov'
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+* Simulación de cadenas de Markov
+
+* Distribución marginal de $X_{n}$  
+
+* Distribución límite
+
+* Número medio de visitas al estado $j$ en las primeras $n$ transiciones arrancando en $i$ 
+
+
+\
+\
+
+### Simulación de cadenas de Markov
+
+Función para generar una trayectoria de longitud (n+1) de una cadena de Markov
+homogénea de parámetro discreto con distribución inicial $p(0)$,  matriz de las 
+probabilidades de transición de un paso $P$, y espacio de estados, $E={1,2,...,nrow(P)}$
+
+
+```{r}
+Trayectoria.CMHD=function(p0,P,n)
+{
+card.E=nrow(P)
+E=seq(1,card.E)
+X=sample(E,1,prob=p0)  #  Generamos el valor inicial X0=x0
+N<-0   #  Transición actual
+  for ( i in 1:n)
+   {
+	  X=c(X, sample(E,1,prob=P[tail(X,1),]))
+	  N=N+1 
+   }
+return(X)  # X representa las trayectoria del proceso de longitud n+1
+}
+```
+\
+
+####  Ejemplo: Ejercicio 20 
+Simulamos tres trayectorias de longitud n+1=25 de la cadena de Markov del ejercicio 20
+```{r}
+# E={1,2,3} (el espacio  de estado original es E={0,1,2}, sin embargo utilizaremos E={1,2,3})
+p0.ej20=c(1,0,0) # Distribución inicial
+P.ej20=matrix(c(0  ,1/2,1/2,  # Matriz de las probabilidades de transición de un paso
+           1/3,  0,2/3,
+           1/2,1/2, 0),byrow=T,ncol=3)
+# 
+n1=24
+Trayectoria.list.ej20=list()
+for ( i in 1:3)
+{
+	Trayectoria.list.ej20[[i]]=Trayectoria.CMHD(p0.ej20,P.ej20,n1)
+}
+```
+\
+```{r, fig.width=10,fig.cap="Fig. 1  Tres trayectorias de longitud n+1=25 de la cadena de Markov del ejercicio 20"}
+col.vec=c("red","blue","black")
+plot(seq(0,n1),Trayectoria.list.ej20[[1]]-1,xlab="n",ylab="Xn",type="b",col=col.vec[1], ylim=c(-1,3),xlim=c(0,n1+1))
+points(seq(0,n1),Trayectoria.list.ej20[[2]]-1,type="b",col=col.vec[2])
+points(seq(0,n1),Trayectoria.list.ej20[[3]]-1,type="b",col=col.vec[3])
+```
+\
+\
+\
+
+
+### Distribución marginal de $X_{n}$
+
+Simulamos 100000 trayectorias de longitud n+1=25 de la cadena de Markov del ejercicio 20. En el ejercicio 20 el espacio de estados es E={0,1,2}
+
+```{r}
+n2.temp=24
+n2=25
+N.sim=100000
+Trayectoria.mat.ej20=matrix(numeric(n2*N.sim),ncol=n2)
+for ( i in 1:N.sim)
+{
+	Trayectoria.mat.ej20[i,]=Trayectoria.CMHD(p0.ej20,P.ej20,n2.temp)
+}
+```
+\
+
+
+Comparamos la distribución marginal teórica de $X_{1}$, $X_{5}$ y $X_{7}$ con la correspondiente distribución obtenida por simulación
+
+```{r}
+#My.freq1(x)
+# input: x (un vector)
+# outpt: Un vector con tres componentes. La componente j-ésima representa el número de elementos de x igual a j, j=1,2,3 
+My.freq1=function(x)  
+{
+	pi.vec=numeric(3)
+	pi.vec[1]=sum(x==1)
+	pi.vec[2]=sum(x==2)
+	pi.vec[3]=sum(x==3)
+	return(pi.vec)
+}
+```
+\
+
+```{r}
+X1.marg.teor=p0.ej20%*%P.ej20                                      # distribución marginal teórica de X1
+X5.marg.teor= X1.marg.teor%*%P.ej20%*%P.ej20%*%P.ej20%*%P.ej20     # distribución marginal teórica de X5
+X7.marg.teor=X5.marg.teor%*%P.ej20%*%P.ej20                          # distribución marginal teórica de X7
+#
+X1.marg.sim=My.freq1(Trayectoria.mat.ej20[,1+1])/N.sim           # distribución marginal de X1 obtenida por simulación
+X5.marg.sim=My.freq1(Trayectoria.mat.ej20[,5+1])/N.sim           # distribución marginal de X5 obtenida por simulación
+X7.marg.sim=My.freq1(Trayectoria.mat.ej20[,7+1])/N.sim           # distribucón marginal de X7 obtenida por simulación
+```
+\
+
+```{r, fig.width=10,fig.cap="Fig. 2.1  Distribución marginal de $X_{1}$"}
+par(mfrow=c(1,1))
+plot(c(0,1,2),X1.marg.teor,type="h",lwd=2,col="blue",xlab="k",ylab=expression(paste("P(", "X" [1], "=k)")),xlim=c(0,2.5),main=expression(paste("Distribución marginal de", " X" [1])))
+points(c(0,1,2)+0.03,X1.marg.sim,type="h",lwd=2,col="red")
+legend(0,0.3, c("Teórica","Simulada"),col=c("blue","red"),lty=c(1,1))
+```
+\
+\
+
+```{r, fig.width=10,fig.cap="Fig. 2.2  Distribución marginal de $X_{5}$"}
+par(mfrow=c(1,1))
+plot(c(0,1,2),X5.marg.teor,type="h",lwd=2,col="blue",xlab="k",ylab=expression(paste("P(", "X" [5], "=k)")),xlim=c(0,2.5),main=expression(paste("Distribución marginal de", " X" [5])),ylim=c(0,0.4))
+points(c(0,1,2)+0.03,X5.marg.sim,type="h",lwd=2,col="red")
+legend(0,0.4, c("Teórica","Simulada"),col=c("blue","red"),lty=c(1,1))
+```
+\
+\
+
+```{r, fig.width=10,fig.cap="Fig. 2.3  Distribución marginal de $X_{7}$"}
+par(mfrow=c(1,1))
+plot(c(0,1,2),X7.marg.teor,type="h",lwd=2,col="blue",xlab="k",ylab=expression(paste("P(", "X" [7], "=k)")),xlim=c(0,2.5),main=expression(paste("Distribución marginal de", " X" [7])),ylim=c(0,0.4))
+points(c(0,1,2)+0.03,X7.marg.sim,type="h",lwd=2,col="red")
+legend(0,0.4, c("Teórica","Simulada"),col=c("blue","red"),lty=c(1,1))
+```
+\
+\
+\
+
+
+### Distribución límite
+
+
+Comparamos la distribución límite teórica con la aproximación obtenida por simulación
+
+```{r}
+pi.teor=c(8/27,9/27,10/27) # 0.2963 0.3333 0.3704   Distribución límite teórica
+pi.mat=apply(Trayectoria.mat.ej20,2,My.freq1)/N.sim  # matriz 3x25. La columna j-ésima (j=1,..,25) representa la distribución marginal de X_{j-1}, es decir, la segunda columna contiene (P(X1=0),P(X1=1), P(X1=2)). La fila i-esima es el vector (P(X0=i-1),P(X2=i-1),...,P(X24=i-1)), es decir la primera columna es el vector (P(X0=0),P(X1=0),...,P(X24=0))
+```
+\
+Estudiamos gráficamente como la distribución de $X_{n}$ (simulada) converge a la distribución límite
+
+```{r, fig.width=10,fig.cap="Fig. 3.1  Comparación $\\pi_{1}$ con $P(X_{n}=0)$"}
+par(mfrow=c(1,1))
+plot(seq(1,25),pi.mat[1,],xlab="n",ylab=expression("Prob("*X[n]*"=0)"),type="l",ylim=c(0.2,0.4))
+points(c(1,25),rep(pi.teor[1],2),type="l",col="red")
+```
+\
+\
+
+
+
+```{r, fig.width=10,fig.cap="Fig. 3.2  Comparación $\\pi_{2}$ con $P(X_{n}=1)$"}
+plot(seq(1,25),pi.mat[2,],xlab="n",ylab=expression("Prob("*X[n]*"=1)"),type="l",ylim=c(0.2,0.4))
+points(c(1,25),rep(pi.teor[2],2),type="l",col="red")
+```
+\
+\
+
+```{r, fig.width=10,fig.cap="Fig. 3.3  Comparación $\\pi_{3}$ con $P(X_{n}=2)$"}
+plot(seq(1,25),pi.mat[3,],xlab="n",ylab=expression("Prob("*X[n]*"=2)"),type="l",ylim=c(0.2,0.4))	
+points(c(1,25),rep(pi.teor[3],2),type="l",col="red")	
+```
+\
+\
+\
+
+### Número medio de visitas al estado $j$ en las primeras $n$ transiciones arrancando en $i$ 
+
+Cálculo de $m_{13}(4)$ (es decir, de  $m_{02}(4)$ si se define $E=\{0,1,2\}$)
+
+
+```{r}
+My.freq2=function(x)
+{
+	N4.vec=sum(x==3)	
+	return(N4.vec)
+}
+```
+\
+
+Comparamos el valor teórico de $m_{13}(4)$ con la aproximación obtenida por simulación
+
+```{r}
+# m_{13}(4)=1.58  valor teórico
+m13.vec=apply(Trayectoria.mat.ej20[,1:5],1,My.freq2)
+mean(m13.vec) # aproximación
+c(1.58,mean(m13.vec))
+```
+
