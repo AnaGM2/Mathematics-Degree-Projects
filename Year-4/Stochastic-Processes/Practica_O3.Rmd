@@ -1,0 +1,382 @@
+---
+title: 'Práctica 3: Probabilidades de absorción (cadenas de Markov) '
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+*  Cálculo de la distribución de $T|X_{0}=i$ y de $\nu_{i}=E[T|X_{0}=i]$  (Ejercicio 8)  
+
+* Cálculo de la distribución de  $T$ y de $E[T]$, $|E_{A}|=1$  (Ejercicio 8) 
+
+* Cálculo $U_{ik}$ (Ejercicio 9)
+
+* Cálculo de la distribución de  $T$ y de $E[T]$, $|E_{A}|>1$  (Ejercicio 7)
+
+
+
+\
+\
+
+### Cálculo de la distribución de $T|X_{0}=i$ y de $\nu_{i}=E[T|X_{0}=i]$ 
+
+Para ilustrar el cálculo de $T|X_{0}=i$ y de $\nu_{i}=E[T|X_{0}=i]$  utilizaremos el ejercicio 8.
+
+```{r}
+
+# E={0,1,2,3}
+p0.ej8=c(0.1,0.3,0.4,0.2) # Distribución inicial
+P.ej8=matrix(c(0.4,0.3,0.2,0.1, # Matriz de las probabilidades de transición de un paso
+             0,0.7,0.2,0.1,
+             0,0, 0.9,0.1,
+             0,0,0,1),byrow=T,ncol=4)
+P.ej8
+```
+\
+
+Función para simular realizaciones del procesos $\{Xt\}|X_{0}=i$, y de la variable aleatoria $T|X_{0}=i$
+
+```{r}
+Trayectoria_ej8=function(x0) 
+{
+X=numeric()
+X=x0   #  Fijamos el valor inicial X0=x0
+N<-0   #  Transición actual
+while (tail(X,1)<3) # mientras que el sistema  no visite el estado 3...
+{
+	X=c(X, sample(c(0:3),1,prob=P.ej8[tail(X,1)+1,]))
+	N=N+1 
+}
+return(list(X,N,X[N+1])) # X representa las trayectoria; N el tiempo de absorción; X[N] la 
+                        # celda en la que termina el experimento.
+}
+```
+\
+
+Generamos 100000 realizaciones del proceso con $X_{0}=1$
+```{r}
+n.sim=100000   # número de simulaciones
+Trayectorias.list=list(n.sim)  # lista que contiene las n.sim trayectorias simuladas
+T.vec=numeric(n.sim)   # vector que contiene los tiempos 
+                       # de absorción de las n.sim simulaciones 
+k.vec=numeric(n.sim)   # vector que contiene las n.sim celdas en las que termina  
+                       # el experimento
+for ( i in 1:n.sim)
+{
+	Trayect.temp=Trayectoria_ej8(1)
+	Trayectorias.list[[i]]=Trayect.temp[[1]]
+	T.vec[i]=Trayect.temp[[2]]
+	k.vec[i]=Trayect.temp[[3]]
+}
+
+ni1.sim=mean(T.vec)
+ni1.teor=10      #(ver ejercicio 8, bloque II)
+```
+\
+
+Distribución simulada de $T|X_{0}=1$  y comparación media teórica y simulada
+```{r, fig.width=10,fig.cap="Fig. 1  Distribución simulada de $T|X_{0}=1$  y comparación media teórica y simulada"}
+hist(T.vec, probability="T",xlab="T",ylab="",main=expression(paste("Distribución simulada de T|","X"[0],"=1 (con T=Tiempo de absorción)")))
+points(rep(ni1.teor,2),c(-1,1000),type="l",col="blue",lwd=2)
+points(rep(ni1.sim,2),c(-1,1000),type="l",col="red",lwd=2,lty=2)
+legend(60,0.06, c("Media Teórica","Media Simulada"),col=c("blue","red"),lty=c(1,1))
+```
+\
+\
+\
+\
+
+### Cálculo de la distribución de  $T$ y de $E[T]$, $|E_{A}|=1$  
+
+Para ilustrar el cálculo de la distribución de  $T$ y de $E[T]$ cuando el conjunto de estados absorbentes
+contiene un único elemento ($|E_{A}|=1$) utilizaremos de nuevo el ejercicio 8.
+\
+
+Generamos 100000 realizaciones del proceso utilizando la función *Trayectoria_ej8.BIS*  
+```{r}
+#Trayectoria_ej8.BIS
+# Genera una realizazión de longitud N+1 (siendo N el tiempo de absorción) 
+# de una CMHD con distribución inicial p0,  matriz de las 
+# probabilidades de transición de un paso P,  espacio de estados, E={1,2,...,nrow(P)}
+# y k estados absorbentes (que corresponden a los últimos k estados de E)
+
+Trayectoria_ej8.BIS=function(p0,P,k) 
+{
+card.E=nrow(P)
+k.abs=card.E-k+1  # los estados absorbentes son k.abs, k.abs+1,...,nrow(P)
+E=seq(1,card.E)
+X=sample(E,1,prob=p0)  #  Generamos el valor inicial X0=x0
+N<-0   #  Transición actual
+while (tail(X,1)<k.abs) # mientras que el sistema  no visite el conjunto de estados absorbentes...
+{
+	X=c(X, sample(E,1,prob=P[tail(X,1),]))
+	N=N+1 
+}
+return(list(X,N,X[N+1])) # X representa las trayectoria; N el tiempo de absorción; X[N]               # el estado en el que termina el experimento.
+}
+```
+\
+
+```{r}
+n.sim=100000   # número de simulaciones
+Trayectorias.list=list(n.sim)  # lista que contiene las n.sim trayectorias simuladas
+T.vec=numeric(n.sim)   # vector que contiene los tiempos 
+                       # de absorción de las n.sim simulaciones 
+k.vec=numeric(n.sim)   # vector que contiene las n.sim celdas en las que termina  
+                       # el experimento
+for ( i in 1:n.sim)
+{
+	Trayect.temp=Trayectoria_ej8.BIS(p0.ej8,P.ej8,1)
+	Trayectorias.list[[i]]=Trayect.temp[[1]]
+	T.vec[i]=Trayect.temp[[2]]
+	k.vec[i]=Trayect.temp[[3]]
+}
+```
+\
+
+
+Comparación distribución teórica y simulada de $T$
+
+```{r}
+Distr.T.teor=function(n) # Distribución de T (ver ejercicio 8, bloque II) 
+{
+	return( 0.8*0.1*0.9^(n-1) )
+}
+mean.T=8  # media de T
+```
+\
+
+
+
+
+```{r, fig.width=10,fig.cap="Fig. 2  Comparación distribución  teórica y simulada de $T$"}
+n.values=sort(unique(T.vec))
+p.simuladas=as.vector(table(T.vec)/n.sim)
+plot(n.values,p.simuladas ,type="h",xlab="n",ylab="P(T=n)",col="blue")
+points(seq(0,90),c(0.2,Distr.T.teor(seq(1,90))),type="l",col="red")
+points(rep(mean(T.vec),2),c(-1,1000),type="l",col="red",lwd=2)
+points(rep(mean.T,2),c(-1,1000),type="l",col="blue",lwd=2,lty=2)
+legend(25,0.20, c("Distribución Teórica","Distribución Simulada",
+"Media Teórica","Media Simulada"),col=c("blue","red","blue","red"),lty=c(1,1,2,2))
+```
+\
+\
+\
+\
+
+Repetir el cálculo de la distribución de $T$ para una cadena de Markov
+con las siguientes características:
+
+```{r}
+# E=\{0,1,2,3\}$  Espacio de estados
+p0.ej8=c(0.1,0.3,0.4,0.2) # Distribución inicial
+P.ej8Mod=matrix(c(0.4,0.3,0.2,0.1, # Matriz de las probabilidades de transición de un paso
+             0.2,0.2,0.5,0.1,
+             0.3,0.4, 0.2,0.1,
+             0,0,0,1),byrow=T,ncol=4)
+P.ej8Mod
+```
+
+
+Se tiene:
+```{r}
+n.sim=100000   # número de simulaciones
+Trayectorias.list.2=list(n.sim)  # lista que contiene las n.sim trayectorias simuladas
+T.vec.2=numeric(n.sim)   # vector que contiene los tiempos 
+                       # de absorción de las n.sim simulaciones 
+k.vec.2=numeric(n.sim)   # vector que contiene las n.sim celdas en las que termina  
+                       # el experimento
+for ( i in 1:n.sim)
+{
+	Trayect.temp.2=Trayectoria_ej8.BIS(p0.ej8,P.ej8Mod,1)
+	Trayectorias.list.2[[i]]=Trayect.temp.2[[1]]
+	T.vec.2[i]=Trayect.temp.2[[2]]
+	k.vec.2[i]=Trayect.temp.2[[3]]
+}
+```
+\
+
+
+```{r, fig.width=10,fig.cap="Fig. 2BIS  Comparación distribución  simulada de $T$ para la cadena de Markov que se ha obtenido modificando la matriz de las probabilidades de transición de un paso del ejercicio 8, con la distribución teórica de T del ejercicio 8"}
+n.values.2=sort(unique(T.vec.2))
+p.simuladas.2=as.vector(table(T.vec.2)/n.sim)
+plot(n.values.2,p.simuladas.2 ,type="h",xlab="n",ylab="P(T=n)",col="blue")
+points(seq(0,90),c(0.2,Distr.T.teor(seq(1,90))),type="l",col="red")
+points(rep(mean(T.vec.2),2),c(-1,1000),type="l",col="red",lwd=2)
+points(rep(mean.T,2),c(-1,1000),type="l",col="blue",lwd=2,lty=2)
+legend(25,0.20, c("Distribución Teórica","Distribución Simulada",
+"Media Teórica","Media Simulada"),col=c("blue","red","blue","red"),lty=c(1,1,2,2))
+```
+
+### Cálculo $U_{ik}$ 
+
+Para ilustrar el cálculo de la probabilidad de absorción en $k$ arrancando en $i$ 
+($U_{ik}$) utilizaremos el ejercicio 9.
+
+```{r}
+# E={0,1,2,3,4,5,6,7,8}; 
+# E_{A}={7,8}
+P.ej9=matrix(c(0,1/2,1/2,rep(0,6), # Matriz de las probabilidades de transición de un paso
+             1/3,0,0,1/3,0,0,0,1/3,0,
+             1/3,0,0,1/3,0,0,0,0,1/3,
+             0,1/4,1/4,0,1/4,1/4,0,0,0,
+             0,0,0,1/3,0,0,1/3,1/3,0,
+             0,0,0,1/3,0,0,1/3,0,1/3,           
+             0,0,0,0,1/2,1/2,0,0,0,
+             rep(0,7),1,0,
+             rep(0,8),1),byrow=T,ncol=9)
+```
+\
+
+Cálculo de $U_{07}$ y  $U_{08}$
+
+```{r}
+p0.temp=c(1,rep(0,8))
+n.sim=100000  # número de simulaciones
+Trayectorias.list=list(n.sim)  # lista que contiene las n.sim trayectorias simuladas
+T.vec=numeric(n.sim)   # vector que contiene los tiempos 
+                       # de absorción de las n.sim simulaciones 
+k.vec=numeric(n.sim)   # vector que contiene las n.sim celdas en las que termina  
+                       # el experimento.
+for ( i in 1:n.sim)
+{
+	Trayect.temp=Trayectoria_ej8.BIS(p0.temp,P.ej9,2)
+	Trayectorias.list[[i]]=Trayect.temp[[1]]
+	T.vec[i]=Trayect.temp[[2]]
+	k.vec[i]=Trayect.temp[[3]]
+}
+U07=as.numeric(round(table(k.vec)[1]/n.sim,2))
+U08=as.numeric( round(table(k.vec)[2]/n.sim,2))
+U07
+U08
+```
+\
+
+Cálculo de $U_{i7}$,i=0,1,...,6
+
+```{r}
+ 
+n.sim=100000
+Ui7.vec=numeric(7)
+for ( j in 1:7)
+{
+p0.temp=rep(0,9)
+p0.temp[j]=1	
+k.vec=numeric(n.sim)   # vector que contiene las n.sim celdas en las que termina  
+                       # el experimento
+  for ( i in 1:n.sim)
+   {
+	Trayect.temp=Trayectoria_ej8.BIS(p0.temp,P.ej9,2)
+	k.vec[i]=Trayect.temp[[3]]
+    }
+Ui7.vec[j]=table(k.vec)[1]/n.sim
+}
+round(Ui7.vec,2)
+```
+\
+\
+\
+\
+
+### Cálculo de la distribución de  T y de E[T], |E_{A}|>1 (Ejercicio 7)
+
+Para ilustrar el cálculo de la distribución de  $T$ y de $E[T]$ cuando hay más de un estado 
+absorbente, utilizaremos  el  ejercicio 7.
+\
+
+Generamos 100000 realizaciones del proceso 
+
+```{r}
+p0.ej7=c(3/8,2/8,2/8,1/8) # Distribucion inicial
+P.ej7=matrix(c(0.3,0.2,0.1,0.4, # Matriz de las probabilidades de transición de un paso
+               0.3,0.3,0.3,0.1,
+               0,0,1,0,
+               0,0,0,1),byrow=T,ncol=4)
+P.ej7
+n.sim=100000  # número de simulaciones
+Trayectorias.list=list(n.sim)  # lista que contiene las n.sim trayectorias simuladas
+T.vec=numeric(n.sim)   # vector que contiene los tiempos 
+                       # de absorción de las n.sim simulaciones 
+k.vec=numeric(n.sim)    
+                       
+for ( i in 1:n.sim)
+{
+	Trayect.temp=Trayectoria_ej8.BIS(p0.ej7,P.ej7,2)
+	Trayectorias.list[[i]]=Trayect.temp[[1]]
+	T.vec[i]=Trayect.temp[[2]]
+	k.vec[i]=Trayect.temp[[3]]
+}
+```
+\
+
+Distribución simulada de T  
+
+```{r, fig.width=10,fig.cap="Fig. 3  Distribución  simulada de $T$. La línea vertical roja representa E[T]"}
+n.values=sort(unique(T.vec))
+p.simuladas=as.vector(table(T.vec)/n.sim)
+plot(n.values,p.simuladas ,type="h",xlab="n",ylab="P(T=n)",col="blue")
+points(rep(mean(T.vec),2),c(-1,1000),type="l",col="red",lwd=2)
+```
+\
+\
+
+
+El caso $E_{A}>1$ se  puede tratar como el caso $E_{A}=1$ redefiniendo el espacio de estado (agrupando todos los estados absorbentes en un único estado absorbente). En el ejercicio 7 podríamos proceder de la siguiente manera:
+
+
+```{r}
+# E={1,2,3*}   
+p0.ej7BIS=c(3/8,2/8,3/8) # Distribucion inicial
+P.ej7BIS=matrix(c(0.3,0.2,0.5, # Matriz de las probabilidades de transición de un paso
+               0.3,0.3,0.4,
+               0,0,1),byrow=T,ncol=3)
+P.ej7BIS
+n.sim=100000  # número de simulaciones
+TBIS.vec=numeric(n.sim)   # vector que contiene los tiempos 
+                       # de absorción de las n.sim simulaciones 
+for ( i in 1:n.sim)
+{
+	Trayect.tempBIS=Trayectoria_ej8.BIS(p0.ej7BIS,P.ej7BIS,1)
+	TBIS.vec[i]=Trayect.tempBIS[[2]]
+}
+```
+\
+
+Comparación distribución simulada de $T$ y $T-BIS$
+
+```{r, fig.width=10,fig.cap="Fig. 4.1  Comparación distribución simulada de $T$ y $TBIS$. Las líneas verticales rojas representan la aproximación de E[T] obtenida por simulación"}
+n.valuesBIS=sort(unique(TBIS.vec))
+p.simuladasBIS=as.vector(table(TBIS.vec)/n.sim)
+par(mfrow=c(2,1))
+plot(n.values,p.simuladas ,type="h",xlab="n",ylab="P(T=n)",col="blue",main="Distribución de T")
+points(rep(mean(T.vec),2),c(-1,1000),type="l",col="red",lwd=2)
+plot(n.valuesBIS,p.simuladasBIS ,type="h",xlab="n",ylab="P(T=n)",col="blue",main="Distribución de TBIS")
+points(rep(mean(TBIS.vec),2),c(-1,1000),type="l",col="red",lwd=2)
+```
+\
+\
+
+R.fun = function(x0,P)
+{
+  card.E = nrow(P)
+  E = seq(1,card.E)
+  X = (x0,sample(E,1,prob = P[x0,]))
+  N=1
+  while(tail(X,1)!=x0)
+  {
+    X = c(X,sample(E,1,P[tail(X,1),]))
+    N=N+1
+  }
+  return N
+}
+
+
+
+
+
+
