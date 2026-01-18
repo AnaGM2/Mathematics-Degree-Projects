@@ -1,6 +1,6 @@
 # Numerical Analysis II
 
-This module focuses on the implementation in Python of numerical algorithms to solve mathematical problems that are analytically complex or impossible to solve. These methods form the backbone of scientific computing, focusing on how to translate continuous mathematical concepts into discrete, machine-executable algorithms.
+This repository focuses on the numerical resolution of **Ordinary Differential Equations** and **Initial Value Problems**. The course explores the stability, convergence, and implementation of algorithms that power modern physics engines and dynamical system simulations.
 
 ---
 
@@ -11,3 +11,7 @@ This module focuses on the implementation in Python of numerical algorithms to s
 * Chapter 2: One-Step Methods
 * Chapter 3: Runge-Kutta Methods
 * Chapter 4: Linear Multistep Methods
+
+## Tech Stack
+* **Language:** Python
+* **Environment:** Jupyter Notebooks
