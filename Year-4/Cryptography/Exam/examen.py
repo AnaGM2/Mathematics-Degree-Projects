@@ -120,4 +120,5 @@ def descomposicion(n, base):
     return [descomp, mensaje]
 
 for n in S:
+
     descomposicion(n,B)
