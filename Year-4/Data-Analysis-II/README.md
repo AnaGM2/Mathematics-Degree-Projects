@@ -9,6 +9,7 @@ This repository covers advanced multivariate statistics, generalized linear mode
     * **Power BI:** Developed interactive dashboards to communicate results to non-technical stakeholders.
 * **Outcome:** Final presentation of insights and model performance metrics.
 
+### Development
 * **Part 1: Exploratory Data Analysis & Stakeholder Engagement**
   * **Business Context:** We conducted an Exploratory Data Analysis on a large banking dataset (approximately 45,000 instances), related to marketing campaigns offering customers a long-term deposit.
   * **Business Intelligence:** We developed a Power BI dashboard to visualize demographic trends, financial indicators, and campaign effectiveness, enabling data-driven decision-making.
