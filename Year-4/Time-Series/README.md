@@ -14,7 +14,7 @@ The project involved a comprehensive study of a real-world time series, covering
 ## Tech Stack
 * **Language:** R
 * **Format:** Jupyter Notebook
-* **Key Libraries:** `tseries`, `forecast`, `ggplot2`.
+* **Key Library:** `forecast`
 
 ## Deliverables
 * **Analysis Notebook:** Complete code with step-by-step statistical reasoning.
