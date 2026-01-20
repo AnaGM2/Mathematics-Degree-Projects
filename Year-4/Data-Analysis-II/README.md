@@ -1,6 +1,9 @@
 # Data Analysis II
 
-This repository covers advanced multivariate statistics, generalized linear models, and their application to real-world business intelligence. It culminates in a comprehensive final project integrating a full data science stack (**SQL, Python, R, and Power BI**).
+This repository covers advanced multivariate statistics, generalized linear models, and their application to real-world business intelligence. It culminates in a comprehensive final project integrating a full data science stack (**SQL, Python, R, and Power BI**). The repository consists of two folders:
+
+- `Practice/`: it contains the solution to a practical assignment implemented in R.
+- `Final-Project/`: it constains all the content related to the final project.
 
 ## Final Project: Business Simulation
 * **Goal:** Applied theoretical concepts to a real company dataset to solve a business problem, acting as a Data Scientist within a simulated corporate environment
