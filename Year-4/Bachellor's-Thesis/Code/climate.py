@@ -3,7 +3,7 @@
 """
 Created on Thu Apr 25 18:16:10 2024
 
-@author: juanma
+@author: gilpe
 """
 
 import scipy.io as scio
