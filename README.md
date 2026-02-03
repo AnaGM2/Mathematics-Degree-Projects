@@ -8,6 +8,6 @@ The repository is organized chronologically by academic year. Each course folder
 
 ## How to Navigate
 
-  1. Enter a Year Folder (e.g., `Year-1/`).
+  1. Select a Year Folder (e.g., `Year-1/`).
   2. Select a Subject Folder (e.g., `Statistics/`).
   3. Read the local `README.md` within that folder for specific instructions on how to run the code and the mathematical context of the projects.
