@@ -10,13 +10,13 @@ The repository is organized chronologically by academic year. Each course folder
 
 Throughout the degree, I utilized a diverse set of tools to bridge the gap between abstract theorems and executable code and computational applications:
 
-* Programming & Scripting: Python, R, Octave, SQL, HTML
+* **Programming & Scripting:** Python, R, Octave, SQL, HTML
 
-* Data Analysis & Visualization: Excel, Power BI, GeoGebra
+* **Data Analysis & Visualization:** Excel, Power BI, GeoGebra
 
-* Specialized Mathematical Software: GAP (Groups, Algorithms, Programming)
+* **Specialized Mathematical Software:** GAP (Groups, Algorithms, Programming)
 
-* Documentation & Reproducible Research: LaTeX, Markdown, R Markdown, Jupyter Notebooks
+* **Documentation & Reproducible Research:** LaTeX, Markdown, R Markdown, Jupyter Notebooks
 
 ## How to Navigate
 
