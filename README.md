@@ -1,6 +1,6 @@
 # Bachelor's Degree in Mathematics
 
-This repository serves as an archive of the laboratory work and computational projects completed during my Bachelor’s Degree in Mathematics. It documents my transition from theoretical foundations to applied numerical analysis and data modeling.
+This repository serves as an archive of the laboratory work and computational projects completed during my **Bachelor’s Degree in Mathematics**. It documents my transition from theoretical foundations to applied numerical analysis and data modeling.
 
 ## Overview
 
