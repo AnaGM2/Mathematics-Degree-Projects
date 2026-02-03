@@ -1,6 +1,6 @@
 # Algorithmics
 
-This repository contains the core algorithmic foundations developed during my second year of the Mathematics degree. It covers everything from basic syntax to complex programming paradigms and object-oriented logic.
+This repository contains the core algorithmic foundations developed on Python during my second year of the Mathematics degree. It covers everything from basic syntax to complex programming paradigms and object-oriented logic.
 
 ## Repository Structure
 The content is organized by topic, each containing:
