@@ -9,3 +9,7 @@ It begins with an introduction that briefly addresses the history of Network The
 Subsequently, random networks are examined, studying different models such as Erdös-Rényi, Barabási-Albert, or Watts-Strogatz, as well as their implementation in Python. Small-world phenomenon and network clustering coefficients are also introduced.
 
 Finally, the study of global air temperature using Network Theory is addressed. This final chapter is dedicated to applying the acquired knowledge in Network Theory to analyze realistic climate data from a numerical model. This approach aims not only to provide a better understanding of Network Theory, but also to apply this knowledge in a practical context and demonstrate its potential usefulness in addressing current climate challenges, such as the identification of climate patterns and their teleconnections.
+
+### Tech Stack
+
+* **Language:** Python.
